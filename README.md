@@ -1,8 +1,6 @@
 Entryway analysis
 =================
 
-![Build](https://github.com/HergenrotherLab/entry-cli/workflows/Python%20application/badge.svg)
-
 The eNTRy rules are a series of guidelines that can increase small-molecule
 accumulation in gram-negative bacteria. A molecule is likely to accumulate if it
 contains few rotatable bonds, low three dimensionality, and an ionizable
