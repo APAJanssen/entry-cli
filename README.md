@@ -13,6 +13,8 @@ by performing the necessary predictions of physiochemical properties. Although
 freely available at entry-way.org, these same calculations can be performed
 locally.
 
+**FORKED TO FIX AND IMPLEMENT LOCALLY**
+
 Dependencies
 ------------
 
@@ -29,20 +31,16 @@ conda activate entry-cli-env
 Alternatively, they can be installed individually:
 
 ```bash
-wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-bash miniconda.sh -b -p $HOME/miniconda
-export PATH="$HOME/miniconda/bin:$PATH"
-conda update
-conda create -n entry-cli-env python=3.6 numpy -y
-conda install -c rdkit rdkit=2019.03.4.0 -y
-conda install -c openbabel openbabel=3.1.1 -y
-conda activate entry-cli-env
+conda create -n entry-cli python=3.11
+pip install rdkit
+conda install -c conda-forge openbabel=3.1.1
+conda activate entry-cli
 ```
 
 Running calculations
 --------------------
 
-Although other file formats will be implemented shortly, molecules can be submitted as SMILES strings for now.
+Molecules can only be submitted as SMILES strings for now.
 
 This can be achieved through command line arguments:
 
@@ -67,7 +65,7 @@ python calc_props.py -b tests/b-lactams.smi
 Citing
 ------
 
-Please cite our paper on the eNTRy rules:
+Please cite the paper on the eNTRy rules:
 
 [Richter, M. F.; Drown, B. S.; Riley, A. P.; Garcia, A.; Shirai, T.; Svec, R. L.; Hergenrother, P. J. *Nature* __2017__,
 *545*, 299-304.](https://doi.org/10.1038/nature22308)
